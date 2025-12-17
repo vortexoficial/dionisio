@@ -47,7 +47,7 @@
             </div>
 
             <p class="legal-warning">
-                Dionísio Gin & Vodka precisa coletar essa informação para ter certeza da idade legal do usuário para acessar nosso site de acordo com as leis aplicáveis. Para mais informações, consulte nossa <a href="#">Política de Privacidade</a>.<br>
+                Dionísio Gin & Vodka precisa coletar essa informação para ter certeza da idade legal do usuário para acessar nosso site de acordo com as leis aplicáveis. Para mais informações, consulte nossa <a href="javascript:void(0)" onclick="openModal('modal-privacidade')">Política de Privacidade</a>.<br>
                 ©2025 Dionísio Gin & Vodka.
             </p>
         </div>
@@ -62,7 +62,7 @@
         </a>
     </div>
 
- <header>
+    <header>
         <div class="container nav-container">
             <a href="#" class="logo">
                 <img src="img/logob.png" alt="Dionísio" class="logo-img logo-b">
@@ -159,7 +159,6 @@
         </div>
 
         <div class="dionisio-split">
-            
             <div class="split-card blue-card">
                 <div class="split-content-wrapper">
                     <div class="split-bottle-col">
@@ -168,13 +167,11 @@
                     <div class="split-info-col">
                         <h3>GIN</h3>
                         <span class="split-subtitle">LIBERDADE EM CADA GOLE</span>
-                        
                         <ul class="split-features">
                             <li><i class="ph-fill ph-drop"></i> London Dry</li>
                             <li><i class="ph-fill ph-martini"></i> ABV 40%</li>
                             <li><i class="ph-fill ph-plant"></i> Feito com zimbro, cítricos e especiarias</li>
                         </ul>
-
                         <button class="btn-cta-white" onclick="openModal('modal-gin')">
                             Ver detalhes
                         </button>
@@ -190,30 +187,21 @@
                     <div class="split-info-col">
                         <h3>VODKA</h3>
                         <span class="split-subtitle">PURA, PRESENTE, POTENTE</span>
-                        
                         <ul class="split-features">
                             <li><i class="ph-fill ph-drop"></i> Filtrada e neutra</li>
                             <li><i class="ph-fill ph-martini"></i> ABV 40%</li>
                             <li><i class="ph-fill ph-sparkle"></i> Ideal para clássicos e contemporâneos</li>
                         </ul>
-
                         <button class="btn-cta-white" onclick="openModal('modal-vodka')">
                             Ver detalhes
                         </button>
                     </div>
                 </div>
             </div>
-
-        </div>
-
-        <div class="container">
-            <div style="text-align: center; margin-top: 40px; opacity: 0.7; font-size: 0.9rem;">
-                <p><i class="ph ph-info"></i> Embalagens limitadas com rótulos especiais (lançamentos sazonais).</p>
-            </div>
         </div>
     </section>
 
-    <section id="receitas" class="recipes-section">
+      <section id="receitas" class="recipes-section">
         <div class="container">
             <div class="section-title">
                 <h2>Mixologia Dionísio</h2>
@@ -605,11 +593,10 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 class="logo" style="font-size: 1.8rem;">
+                    <div class="logo">
                         <img src="img/logob.png" alt="Dionísio" class="logo-img logo-b">
                         <img src="img/logop.png" alt="Dionísio" class="logo-img logo-p">
-                    </h4>
-                    
+                    </div>
                     <p style="font-size: 0.9rem; margin-top: 15px;">Bebidas premium para quem sabe apreciar os detalhes.</p>
                 </div>
                 <div class="footer-col">
@@ -623,9 +610,9 @@
                 <div class="footer-col">
                     <h4>Legal</h4>
                     <ul>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Uso</a></li>
-                        <li><a href="#">Política de Trocas</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('modal-privacidade')">Política de Privacidade</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('modal-termos')">Termos de Uso</a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('modal-trocas')">Política de Trocas</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -641,6 +628,128 @@
             </div>
         </div>
     </footer>
+
+    <div id="modal-gin" class="modal-overlay" onclick="closeModal(event, 'modal-gin')">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal(null, 'modal-gin')">&times;</span>
+            <div class="modal-body">
+                <h3>Gin — London Dry</h3>
+                <p class="modal-desc">Um espírito rebelde engarrafado. Nosso London Dry respeita a tradição, mas brinca com o caos.</p>
+                <div class="modal-grid">
+                    <div class="modal-box">
+                        <h4>Ficha Técnica</h4>
+                        <ul><li>ABV: 40%</li><li>Vol: 750ml</li></ul>
+                    </div>
+                </div>
+                <a href="https://wa.me/5513992031715" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Comprar agora</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-vodka" class="modal-overlay" onclick="closeModal(event, 'modal-vodka')">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal(null, 'modal-vodka')">&times;</span>
+            <div class="modal-body">
+                <h3>Vodka — Premium</h3>
+                <p class="modal-desc">Invisível até o primeiro gole. Passa por 5 destilações para pureza absoluta.</p>
+                <a href="https://wa.me/5513992031715" target="_blank" class="btn btn-primary" style="margin-top: 20px; width: 100%;">Comprar agora</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-privacidade" class="modal-overlay" onclick="closeModal(event, 'modal-privacidade')">
+        <div class="modal-content modal-square">
+            <span class="close-modal" onclick="closeModal(null, 'modal-privacidade')">&times;</span>
+            <div class="modal-body">
+                <h3>Política de Privacidade</h3>
+                <div class="modal-legal-text">
+                    <p><strong>Última atualização: Dezembro de 2025</strong></p>
+                    
+                    <p>A <strong>Dionísio Gin & Vodka</strong> ("Nós") está comprometida em proteger a sua privacidade. Esta política detalha como coletamos, usamos e protegemos suas informações pessoais ao utilizar nosso website e serviços, em estrita conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).</p>
+
+                    <h4>1. Coleta de Informações</h4>
+                    <p>Coletamos informações que você nos fornece diretamente:</p>
+                    <ul>
+                        <li><strong>Verificação de Idade (Age Gate):</strong> Ao acessar o site, solicitamos sua data de nascimento para garantir conformidade legal. Este dado é usado exclusivamente para permitir o acesso e não é armazenado permanentemente vinculado a perfis de publicidade.</li>
+                        <li><strong>Dados de Contato:</strong> Nome, e-mail e telefone fornecidos em formulários de atacado ou contato.</li>
+                        <li><strong>Dados de Navegação:</strong> Endereço IP, tipo de navegador e páginas acessadas, coletados via cookies para melhoria da experiência do usuário.</li>
+                    </ul>
+
+                    <h4>2. Uso das Informações</h4>
+                    <p>Utilizamos seus dados para:</p>
+                    <ul>
+                        <li>Garantir que nossos produtos não sejam exibidos ou comercializados para menores de 18 anos.</li>
+                        <li>Processar pedidos e responder a solicitações de parcerias comerciais.</li>
+                        <li>Enviar comunicações de marketing (newsletter), caso você tenha optado explicitamente por recebê-las.</li>
+                        <li>Melhorar a segurança e o desempenho do nosso site.</li>
+                    </ul>
+
+                    <h4>3. Compartilhamento de Dados</h4>
+                    <p>Não vendemos suas informações pessoais. Podemos compartilhar dados com prestadores de serviços terceirizados (ex: gateways de pagamento e logística) estritamente necessários para a operação do negócio.</p>
+
+                    <h4>4. Seus Direitos</h4>
+                    <p>Você tem o direito de solicitar o acesso, correção, anonimização ou exclusão de seus dados pessoais a qualquer momento. Para exercer esses direitos, entre em contato através de nossos canais oficiais.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-termos" class="modal-overlay" onclick="closeModal(event, 'modal-termos')">
+        <div class="modal-content modal-square">
+            <span class="close-modal" onclick="closeModal(null, 'modal-termos')">&times;</span>
+            <div class="modal-body">
+                <h3>Termos de Uso</h3>
+                <div class="modal-legal-text">
+                    <p>Bem-vindo ao site da <strong>Dionísio Gin & Vodka</strong>. Ao acessar e utilizar este site, você concorda com os seguintes termos e condições.</p>
+
+                    <h4>1. Restrição de Idade</h4>
+                    <p>Este site é destinado exclusivamente para uso por pessoas com idade legal para consumo de álcool (18 anos ou mais no Brasil). Se você não atende a este requisito, deve sair deste site imediatamente. A falsificação de informações no "Age Gate" é de responsabilidade exclusiva do usuário.</p>
+
+                    <h4>2. Propriedade Intelectual</h4>
+                    <p>Todo o conteúdo deste site, incluindo logotipos, marcas, imagens, textos, designs de garrafas e vídeos, é propriedade exclusiva da Dionísio ou de seus licenciadores e está protegido pelas leis de direitos autorais e propriedade industrial.</p>
+
+                    <h4>3. Uso Aceitável</h4>
+                    <p>Você concorda em usar nosso site apenas para fins legais. É proibido usar nosso conteúdo para promover o consumo excessivo ou irresponsável de álcool, ou para direcionar publicidade de bebidas alcoólicas a menores de idade.</p>
+
+                    <h4>4. Consumo Responsável</h4>
+                    <p>A Dionísio apoia e promove o consumo responsável de bebidas alcoólicas.
+                    <br><strong>SE BEBER, NÃO DIRIJA. BEBA COM MODERAÇÃO.</strong></p>
+
+                    <h4>5. Limitação de Responsabilidade</h4>
+                    <p>Embora nos esforcemos para manter as informações do site atualizadas, não garantimos a precisão absoluta de descrições de produtos ou disponibilidade de estoque em tempo real. O uso do site é por sua conta e risco.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-trocas" class="modal-overlay" onclick="closeModal(event, 'modal-trocas')">
+        <div class="modal-content modal-square">
+            <span class="close-modal" onclick="closeModal(null, 'modal-trocas')">&times;</span>
+            <div class="modal-body">
+                <h3>Política de Trocas e Devoluções</h3>
+                <div class="modal-legal-text">
+                    <p>Nossa política visa garantir a sua satisfação e está alinhada com o Código de Defesa do Consumidor (CDC). Dada a natureza do nosso produto (bebidas alcoólicas e alimentos), aplicam-se regras específicas.</p>
+
+                    <h4>1. Direito de Arrependimento</h4>
+                    <p>Conforme o Art. 49 do CDC, você tem o direito de desistir da compra em até <strong>7 (sete) dias corridos</strong> após o recebimento do produto.</p>
+                    <p><strong>Condição Obrigatória:</strong> O produto deve estar intacto, com o lacre da tampa inviolado, na embalagem original e sem sinais de consumo ou abertura. Garrafas abertas ou com lacre rompido não serão aceitas para devolução por arrependimento.</p>
+
+                    <h4>2. Avarias no Transporte</h4>
+                    <p>Se você receber o pedido com a caixa molhada, aberta ou ouvir barulho de vidro quebrado:</p>
+                    <ul>
+                        <li>Recuse o recebimento no ato da entrega, se possível, e anote o motivo no verso da nota.</li>
+                        <li>Caso já tenha recebido, tire fotos da embalagem e dos produtos danificados e entre em contato conosco em até 48 horas via WhatsApp ou e-mail. Faremos o reenvio imediato sem custo adicional.</li>
+                    </ul>
+
+                    <h4>3. Defeito no Produto</h4>
+                    <p>Caso identifique alguma alteração de qualidade (sabor, odor ou aspecto visual atípico) após abrir a garrafa, entre em contato imediatamente. O produto poderá ser recolhido para análise laboratorial. Confirmado o desvio de qualidade, realizaremos a troca ou reembolso integral.</p>
+
+                    <h4>4. Reembolso</h4>
+                    <p>O reembolso será processado após o recebimento e análise do produto devolvido. O valor será estornado utilizando o mesmo método de pagamento da compra original.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

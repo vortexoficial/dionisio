@@ -824,7 +824,62 @@ footer .logo img {
 /* --- MODAIS & FAQ --- */
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); z-index: 10000; display: none; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s ease; }
 .modal-overlay.active { display: flex; opacity: 1; }
-.modal-content { background: var(--bg-section); border: 1px solid var(--color-red); padding: 40px; border-radius: 12px; max-width: 600px; width: 100%; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.5); transform: translateY(20px); transition: transform 0.3s ease; max-height: 90vh; overflow-y: auto; }
+
+.modal-content { 
+    background: var(--bg-section); 
+    border: 1px solid var(--color-red); 
+    padding: 40px; 
+    border-radius: 12px; /* Padrão arredondado para produtos */
+    max-width: 600px; 
+    width: 100%; 
+    position: relative; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5); 
+    transform: translateY(20px); 
+    transition: transform 0.3s ease; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+}
+
+/* === MODAL QUADRADO (SOLICITADO PARA JURÍDICO) === */
+.modal-square {
+    border-radius: 0 !important; /* Remove arredondamento */
+    max-width: 700px; /* Um pouco mais largo para leitura */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+[data-theme="light"] .modal-square { border: 1px solid rgba(0,0,0,0.1); }
+
+/* Estilização do Texto Jurídico */
+.modal-legal-text {
+    text-align: left;
+    margin-top: 20px;
+    padding-right: 10px;
+}
+.modal-legal-text p {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+.modal-legal-text h4 {
+    color: var(--color-red);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.modal-legal-text ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.modal-legal-text ul li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+
 .modal-overlay.active .modal-content { transform: translateY(0); }
 .close-modal { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--text-muted); cursor: pointer; transition: 0.3s; line-height: 1; }
 .close-modal:hover { color: var(--color-red); }
