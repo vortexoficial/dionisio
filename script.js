@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- LÓGICA DE VERIFICAÇÃO DE IDADE (Age Gate por Ano) ---
+    // --- LÓGICA DE VERIFICAÇÃO DE IDADE (Age Gate por Sessão) ---
     const ageGate = document.getElementById('age-gate');
-    const isVerified = localStorage.getItem('dionisioAgeVerified');
+    
+    // ALTERAÇÃO 1: Mudamos de localStorage para sessionStorage aqui
+    const isVerified = sessionStorage.getItem('dionisioAgeVerified');
 
     // Permite apertar ENTER no input para enviar
     const ageInput = document.getElementById('age-year');
@@ -181,7 +183,9 @@ function checkAgeInput() {
     const age = currentYear - parseInt(inputYear);
 
     if (age >= 18) {
-        localStorage.setItem('dionisioAgeVerified', 'true');
+        // ALTERAÇÃO 2: Mudamos de localStorage para sessionStorage aqui também
+        sessionStorage.setItem('dionisioAgeVerified', 'true');
+        
         const ageGate = document.getElementById('age-gate');
         
         if (ageGate) {
