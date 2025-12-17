@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // --- LÓGICA DE VERIFICAÇÃO DE IDADE (Age Gate por Sessão) ---
+    // --- LÓGICA DE VERIFICAÇÃO DE IDADE (Age Gate por Ano) ---
     const ageGate = document.getElementById('age-gate');
-    
-    // ALTERAÇÃO 1: Mudamos de localStorage para sessionStorage aqui
-    const isVerified = sessionStorage.getItem('dionisioAgeVerified');
+    const isVerified = localStorage.getItem('dionisioAgeVerified');
 
     // Permite apertar ENTER no input para enviar
     const ageInput = document.getElementById('age-year');
@@ -109,7 +107,6 @@ function setupInfiniteScroll() {
     const track = document.getElementById('recipesTrack');
     if (!track) return;
 
-    // 1. Duplicar os itens para criar a ilusão de infinito
     const originalCards = Array.from(track.children);
     
     originalCards.forEach(card => {
@@ -118,14 +115,13 @@ function setupInfiniteScroll() {
         track.appendChild(clone);
     });
 
-    // 2. Adicionar o "Teletransporte Silencioso"
     track.addEventListener('scroll', () => {
         const scrollLimit = track.scrollWidth / 2;
         
         if (track.scrollLeft >= scrollLimit) {
-            track.style.scrollBehavior = 'auto'; // Desliga animação para o salto
-            track.scrollLeft -= scrollLimit;     // Salta para trás
-            track.style.scrollBehavior = 'smooth'; // Religa animação
+            track.style.scrollBehavior = 'auto'; 
+            track.scrollLeft -= scrollLimit;     
+            track.style.scrollBehavior = 'smooth'; 
         } 
         else if (track.scrollLeft <= 0) {
             track.style.scrollBehavior = 'auto';
@@ -136,7 +132,7 @@ function setupInfiniteScroll() {
 
 function scrollCarousel(direction) {
     const track = document.getElementById('recipesTrack');
-    const cardWidth = 320; // Largura do card (300px) + gap (20px)
+    const cardWidth = 320; 
     
     if (track) {
         track.scrollTo({
@@ -151,7 +147,7 @@ function startAutoPlay() {
     clearInterval(autoPlayInterval);
     autoPlayInterval = setInterval(() => {
         scrollCarousel(1);
-    }, 3000); // 3 Segundos
+    }, 3000); 
 }
 
 function resetAutoPlay() {
@@ -159,14 +155,12 @@ function resetAutoPlay() {
     startAutoPlay();
 }
 
-// Lógica de clicar no card de receita (Mobile/Tablet)
 function toggleRecipe(card) {
     const isActive = card.classList.contains('active');
     document.querySelectorAll('.recipe-card').forEach(c => c.classList.remove('active'));
     
     if (!isActive) card.classList.add('active');
     
-    // Pausa o autoplay momentaneamente para leitura
     clearInterval(autoPlayInterval);
     setTimeout(startAutoPlay, 10000); 
 }
@@ -183,9 +177,7 @@ function checkAgeInput() {
     const age = currentYear - parseInt(inputYear);
 
     if (age >= 18) {
-        // ALTERAÇÃO 2: Mudamos de localStorage para sessionStorage aqui também
-        sessionStorage.setItem('dionisioAgeVerified', 'true');
-        
+        localStorage.setItem('dionisioAgeVerified', 'true');
         const ageGate = document.getElementById('age-gate');
         
         if (ageGate) {
@@ -201,7 +193,6 @@ function checkAgeInput() {
     }
 }
 
-// --- TEMA (DARK/LIGHT) ---
 function toggleTheme() {
     const html = document.documentElement;
     const icon = document.getElementById('theme-icon');
@@ -218,7 +209,6 @@ function toggleTheme() {
     }
 }
 
-// --- MENU MOBILE ---
 function toggleMenu() {
     const navMenu = document.querySelector('.nav-menu');
     navMenu.classList.toggle('active');
@@ -231,7 +221,6 @@ function toggleMenu() {
     }
 }
 
-// --- MODAIS DE PRODUTOS ---
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -275,6 +264,6 @@ function handleFormSubmit(event) {
         return;
     }
 
-    alert('Solicitação enviada com sucesso! Nossa equipe entrará em contato.');
+    alert('Solicitação enviada com sucesso! Nossa equipe entrará em contato em breve com uma proposta personalizada.');
     document.getElementById('b2b-form').reset();
 }
